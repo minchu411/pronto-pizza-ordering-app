@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,98 +8,56 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #db1c1c;
-            --secondary-color: #fb460f;
-        }
-
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: Arial, sans-serif;
             padding-top: 76px;
         }
-
         .navbar {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #db1c1c, #fb460f);
         }
-
         .navbar-brand, .nav-link {
             color: white !important;
             font-weight: 500;
         }
-
         .nav-link:hover, .nav-link.active {
             background: rgba(255,255,255,0.1);
             border-radius: 5px;
         }
-
         .hero-section {
             background: linear-gradient(rgba(219, 28, 28, 0.8), rgba(251, 70, 15, 0.8));
             color: white;
             padding: 100px 0;
             text-align: center;
         }
-
         .btn-custom {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(45deg, #db1c1c, #fb460f);
             border: none;
             color: white;
             font-weight: bold;
             border-radius: 50px;
             padding: 12px 30px;
         }
-
-        .btn-custom:hover {
-            color: white;
-            transform: translateY(-2px);
-        }
-
         .menu-item {
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            height: 100%;
+            margin-bottom: 20px;
         }
-
-        .menu-item:hover {
-            transform: translateY(-5px);
-        }
-
         .menu-item img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 15px 15px 0 0;
         }
-
-        .menu-item-content {
-            padding: 1.5rem;
-        }
-
         .price {
-            color: var(--primary-color);
+            color: #db1c1c;
             font-size: 1.3rem;
             font-weight: bold;
             margin: 1rem 0;
         }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            height: 100%;
-        }
-
-        .text-primary {
-            color: var(--primary-color) !important;
-        }
-
         .hidden {
             display: none;
         }
-
         .cart-sidebar {
             position: fixed;
             right: -400px;
@@ -111,17 +70,9 @@
             z-index: 1050;
             overflow-y: auto;
         }
-
         .cart-sidebar.show {
             right: 0;
         }
-
-        .cart-header {
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem;
-        }
-
         .cart-overlay {
             position: fixed;
             top: 0;
@@ -132,21 +83,16 @@
             z-index: 1040;
             display: none;
         }
-
         .cart-overlay.show {
             display: block;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#"><i class="fas fa-pizza-slice me-2"></i>Pronto Pizza</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="#" onclick="showSection('home')">Home</a>
@@ -175,7 +121,6 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
     <section id="homeSection">
         <div class="hero-section">
             <div class="container">
@@ -186,27 +131,26 @@
                 </button>
             </div>
         </div>
-
         <div class="py-5 bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 mb-4">
-                        <div class="feature-card">
-                            <i class="fas fa-pizza-slice fa-3x text-primary mb-3"></i>
+                        <div class="card text-center p-4">
+                            <i class="fas fa-pizza-slice fa-3x text-danger mb-3"></i>
                             <h3>Fresh Ingredients</h3>
                             <p>We use only the freshest ingredients, from San Marzano tomatoes to locally sourced vegetables.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 mb-4">
-                        <div class="feature-card">
-                            <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                        <div class="card text-center p-4">
+                            <i class="fas fa-clock fa-3x text-danger mb-3"></i>
                             <h3>Fast Delivery</h3>
                             <p>Hot, fresh pizza delivered to your door in 30 minutes or less, guaranteed.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 mb-4">
-                        <div class="feature-card">
-                            <i class="fas fa-cog fa-3x text-primary mb-3"></i>
+                        <div class="card text-center p-4">
+                            <i class="fas fa-cog fa-3x text-danger mb-3"></i>
                             <h3>Customize Your Way</h3>
                             <p>Build your perfect pizza with our wide selection of sizes, crusts, and premium toppings.</p>
                         </div>
@@ -216,18 +160,15 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
     <section id="menuSection" class="hidden">
         <div class="container py-5">
             <h1 class="text-center mb-5">Our Complete Menu</h1>
-            
-            <!-- Pizzas -->
-            <h3 class="text-primary mb-4"><i class="fa-solid fa-pizza"></i>Signature Pizzas</h3>
-            <div class="row mb-5">
+            <h3 class="text-danger mb-4">Signature Pizzas</h3>
+            <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/VabjSip.jpeg" alt="Classic Pepperoni">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Classic Pepperoni</h5>
                             <p class="text-muted">Pepperoni, mozzarella, tomato sauce</p>
                             <div class="price">$10.99</div>
@@ -238,7 +179,7 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/BGBQl0a.jpeg" alt="Classic Margherita">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Classic Margherita</h5>
                             <p class="text-muted">San Marzano tomatoes, fresh mozzarella, basil</p>
                             <div class="price">$14.99</div>
@@ -249,7 +190,7 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/ffV49oS.jpeg" alt="Italian Sausage">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Italian Sausage</h5>
                             <p class="text-muted">Italian sausage, mozzarella, tomato sauce</p>
                             <div class="price">$12.99</div>
@@ -260,7 +201,7 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/gqjyT0d.jpeg" alt="Meat Lovers">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Meat Lovers</h5>
                             <p class="text-muted">Pepperoni, sausage, ham, bacon, ground beef</p>
                             <div class="price">$14.99</div>
@@ -271,7 +212,7 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/srAd38F.jpeg" alt="Hawaiian">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Hawaiian</h5>
                             <p class="text-muted">Pineapple, tomato sauce, mozzarella cheese, and ham</p>
                             <div class="price">$11.99</div>
@@ -280,67 +221,65 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Appetizers -->
-            <h3 class="text-primary mb-4"><i class="fas fa-drumstick-bite me-2"></i>Appetizers</h3>
-            <div class="row mb-5">
+            
+            <h3 class="text-danger mb-4 mt-5">Appetizers</h3>
+            <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/q5XgU78.jpeg" alt="Garlic Knots">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Garlic Knots (6 pc)</h5>
                             <p class="text-muted">Fresh baked knots with garlic and herbs</p>
                             <div class="price">$7.99</div>
-                            <button class="btn btn-custom" onclick="addToCart('Garlic Knots (6 pc)', 7.99)">Add to Cart</button>
+                            <button class="btn btn-custom w-100" onclick="addToCart('Garlic Knots', 7.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/H6ZS999.jpeg" alt="Mozzarella Sticks">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Mozzarella Sticks</h5>
                             <p class="text-muted">Golden fried mozzarella with marinara</p>
                             <div class="price">$4.99</div>
-                            <button class="btn btn-custom" onclick="addToCart('Mozzarella Sticks', 4.99)">Add to Cart</button>
+                            <button class="btn btn-custom w-100" onclick="addToCart('Mozzarella Sticks', 4.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/oicPPQG.jpeg" alt="Soft Breadsticks">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Soft Breadsticks</h5>
                             <p class="text-muted">Soft and fluffy topped with garlic butter</p>
                             <div class="price">$4.99</div>
-                            <button class="btn btn-custom" onclick="addToCart('Soft Breadsticks', 4.99)">Add to Cart</button>
+                            <button class="btn btn-custom w-100" onclick="addToCart('Soft Breadsticks', 4.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Desserts -->
-            <h3 class="text-primary mb-4"><i class="fas fa-birthday-cake me-2"></i>Desserts</h3>
+            
+            <h3 class="text-danger mb-4 mt-5">Desserts</h3>
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/YmdtweP.jpeg" alt="Lava Cake">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Lava Cake</h5>
-                            <p class="text-muted">A rich, dark chocolate cake with a luxuriously gooey, warm chocolate ganache filling</p>
+                            <p class="text-muted">Rich chocolate cake with gooey center</p>
                             <div class="price">$6.99</div>
-                            <button class="btn btn-custom" onclick="addToCart('Lava Cake', 6.99)">Add to Cart</button>
+                            <button class="btn btn-custom w-100" onclick="addToCart('Lava Cake', 6.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="menu-item">
                         <img src="https://i.imgur.com/EwGgMLG.jpeg" alt="Oreo Cheesecake">
-                        <div class="menu-item-content">
+                        <div class="p-3">
                             <h5>Oreo Cheesecake</h5>
-                            <p class="text-muted">A creamy, classic cheesecake loaded with chunks of Oreo Cookies on an Oreo cookie crust</p>
+                            <p class="text-muted">Creamy cheesecake with Oreo cookies</p>
                             <div class="price">$6.99</div>
-                            <button class="btn btn-custom" onclick="addToCart('Oreo Cheesecake', 6.99)">Add to Cart</button>
+                            <button class="btn btn-custom w-100" onclick="addToCart('Oreo Cheesecake', 6.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -348,7 +287,6 @@
         </div>
     </section>
 
-    <!-- Orders Section -->
     <section id="ordersSection" class="hidden">
         <div class="container py-5">
             <h2 class="text-center mb-4">Order History</h2>
@@ -356,7 +294,6 @@
         </div>
     </section>
 
-    <!-- Profile Section -->
     <section id="profileSection" class="hidden">
         <div class="container py-5">
             <h2 class="text-center mb-4">User Profile</h2>
@@ -364,14 +301,14 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <form>
+                            <form id="profileForm">
                                 <div class="mb-3">
                                     <label class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" value="John Doe">
+                                    <input type="text" class="form-control" value="John Doe" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" value="john@example.com">
+                                    <input type="email" class="form-control" value="john@example.com" required>
                                 </div>
                                 <button type="submit" class="btn btn-custom">Update Profile</button>
                             </form>
@@ -382,24 +319,103 @@
         </div>
     </section>
 
-    <!-- Admin Section -->
     <section id="adminSection" class="hidden">
-        <div class="container py-5">
-            <h2 class="text-center mb-4">Admin Dashboard</h2>
-            <div class="card">
-                <div class="card-body">
-                    <h5>Menu Management</h5>
-                    <p>Admin features for managing pizza menu and orders.</p>
+        <div id="adminLogin" class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">Admin Login</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="adminLoginForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="adminEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="adminPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-custom w-100">Login</button>
+                                <small class="text-muted d-block mt-2">Demo: admin@pronto.com / admin123</small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="adminDashboard" class="hidden">
+            <div class="container py-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Admin Dashboard</h2>
+                    <button class="btn btn-outline-primary" onclick="adminLogout()">Logout</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <h5>Total Orders</h5>
+                                <h2>47</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h5>Revenue</h5>
+                                <h2>$1,247</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <h5>Menu Items</h5>
+                                <h2>12</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Recent Orders</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1001</td>
+                                    <td>John Doe</td>
+                                    <td>$10.99</td>
+                                    <td><span class="badge bg-success">Delivered</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#1002</td>
+                                    <td>Jane Smith</td>
+                                    <td>$22.98</td>
+                                    <td><span class="badge bg-warning">Preparing</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cart Sidebar -->
     <div class="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header d-flex justify-content-between align-items-center">
-            <h4><i class="fas fa-shopping-cart me-2"></i>Your Cart</h4>
+        <div class="cart-header d-flex justify-content-between align-items-center p-3 bg-danger text-white">
+            <h4>Your Cart</h4>
             <button class="btn-close btn-close-white" onclick="toggleCart()"></button>
         </div>
         <div id="cartItems" class="p-3">
@@ -409,17 +425,13 @@
             <div class="d-flex justify-content-between mb-3">
                 <strong>Total: $<span id="cartTotal">0.00</span></strong>
             </div>
-            <button class="btn btn-custom w-100" onclick="simulateOrderSubmission()">
-                <i class="fas fa-credit-card me-2"></i>Checkout
-            </button>
+            <button class="btn btn-custom w-100" onclick="checkout()">Checkout</button>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         var cart = [];
 
-        // Navigation function
         function showSection(sectionName) {
             var sections = ['homeSection', 'menuSection', 'ordersSection', 'profileSection', 'adminSection'];
             
@@ -428,11 +440,7 @@
                 if (section) {
                     if (sections[i] === sectionName + 'Section') {
                         section.classList.remove('hidden');
-                        
-                        // AJAX functionality for Task 5
-                        if (sectionName === 'menu') {
-                            simulateLoadMenuItems();
-                        } else if (sectionName === 'orders') {
+                        if (sectionName === 'orders') {
                             loadOrderHistory();
                         }
                     } else {
@@ -450,11 +458,9 @@
             }
         }
 
-        // Cart functions
         function toggleCart() {
             var sidebar = document.getElementById('cartSidebar');
             var overlay = document.querySelector('.cart-overlay');
-            
             sidebar.classList.toggle('show');
             overlay.classList.toggle('show');
         }
@@ -475,18 +481,15 @@
             }
             
             updateCartDisplay();
-            showToast(itemName + ' added to cart!');
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartDisplay();
+            alert(itemName + ' added to cart!');
         }
 
         function updateCartDisplay() {
             var cartItems = document.getElementById('cartItems');
             var cartCount = document.getElementById('cartCount');
             var cartTotal = document.getElementById('cartTotal');
+            
+            cartItems.innerHTML = '';
             
             if (cart.length === 0) {
                 cartItems.innerHTML = '<p class="text-muted">Your cart is empty</p>';
@@ -497,141 +500,77 @@
             
             var total = 0;
             var itemCount = 0;
-            cartItems.innerHTML = '';
             
             for (var i = 0; i < cart.length; i++) {
                 var item = cart[i];
                 total += item.price * item.quantity;
                 itemCount += item.quantity;
                 
-                cartItems.innerHTML += '<div class="border-bottom pb-2 mb-2">' +
-                    '<h6>' + item.name + '</h6>' +
-                    '<div class="d-flex justify-content-between align-items-center">' +
-                    '<span>$' + item.price.toFixed(2) + ' x ' + item.quantity + '</span>' +
-                    '<button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(' + i + ')">' +
-                    '<i class="fas fa-trash"></i></button></div></div>';
+                var itemDiv = document.createElement('div');
+                itemDiv.className = 'border-bottom pb-2 mb-2';
+                itemDiv.innerHTML = '<h6>' + item.name + '</h6><p>$' + item.price.toFixed(2) + ' (qty: ' + item.quantity + ')</p>';
+                cartItems.appendChild(itemDiv);
             }
             
             cartCount.textContent = itemCount;
             cartTotal.textContent = total.toFixed(2);
         }
 
-        // Toast notifications
-        function showToast(message) {
-            var toast = document.createElement('div');
-            toast.className = 'toast show align-items-center text-white bg-success border-0 position-fixed top-0 end-0 m-3';
-            toast.style.zIndex = '1055';
-            toast.innerHTML = '<div class="d-flex"><div class="toast-body">' + message + '</div><button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="this.parentElement.parentElement.remove()"></button></div>';
-            document.body.appendChild(toast);
-            
-            setTimeout(function() {
-                if (toast.parentElement) {
-                    toast.remove();
-                }
-            }, 3000);
-        }
-
-        // AJAX Functions for Task 5
-        function simulateLoadMenuItems() {
-            showToast('Loading menu items via AJAX...');
-            
-            setTimeout(function() {
-                var menuData = {
-                    pizzas: [
-                        {name: 'Classic Pepperoni', price: 10.99},
-                        {name: 'Classic Margherita', price: 14.99},
-                        {name: 'Italian Sausage', price: 12.99},
-                        {name: 'Meat Lovers', price: 14.99},
-                        {name: 'Hawaiian', price: 11.99}
-                    ]
-                };
-                console.log('Menu data loaded via AJAX:', menuData);
-                showToast('Menu items loaded successfully!');
-            }, 1000);
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Cart is empty!');
+                return;
+            }
+            alert('Order placed successfully!');
+            cart = [];
+            updateCartDisplay();
+            toggleCart();
         }
 
         function loadOrderHistory() {
-            showToast('Loading order history via AJAX...');
-            
             setTimeout(function() {
-                var orderHistory = [
-                    {id: 1001, date: '2025-01-15', total: 23.98, status: 'Delivered'},
-                    {id: 1002, date: '2025-01-10', total: 15.99, status: 'Delivered'}
-                ];
-                
                 var ordersSection = document.querySelector('#ordersSection .container');
-                ordersSection.innerHTML = '<h2 class="text-center mb-4">Order History</h2>';
-                
-                if (orderHistory.length > 0) {
-                    var orderList = '<div class="row justify-content-center"><div class="col-md-8">';
-                    for (var i = 0; i < orderHistory.length; i++) {
-                        var order = orderHistory[i];
-                        orderList += '<div class="card mb-3">' +
-                            '<div class="card-body">' +
-                            '<h5>Order #' + order.id + '</h5>' +
-                            '<p>Date: ' + order.date + '</p>' +
-                            '<p>Total: $' + order.total.toFixed(2) + '</p>' +
-                            '<span class="badge bg-success">' + order.status + '</span>' +
-                            '</div></div>';
-                    }
-                    orderList += '</div></div>';
-                    ordersSection.innerHTML += orderList;
-                }
-                
-                console.log('Order history loaded via AJAX:', orderHistory);
-                showToast('Order history loaded!');
+                ordersSection.innerHTML = '<h2 class="text-center mb-4">Order History</h2>' +
+                    '<div class="row justify-content-center">' +
+                    '<div class="col-md-8">' +
+                    '<div class="card mb-3"><div class="card-body">' +
+                    '<h5>Order #1001</h5><p>Date: 2025-01-15</p><p>Total: $23.98</p>' +
+                    '<span class="badge bg-success">Delivered</span></div></div>' +
+                    '</div></div>';
             }, 1000);
         }
 
-        function simulateOrderSubmission() {
-            if (cart.length === 0) {
-                showToast('Cart is empty!');
-                return;
+        function adminLogout() {
+            document.getElementById('adminLogin').classList.remove('hidden');
+            document.getElementById('adminDashboard').classList.add('hidden');
+            document.getElementById('adminLoginForm').reset();
+            alert('Logged out successfully');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var adminForm = document.getElementById('adminLoginForm');
+            if (adminForm) {
+                adminForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var email = document.getElementById('adminEmail').value;
+                    var password = document.getElementById('adminPassword').value;
+                    
+                    if (email === 'admin@pronto.com' && password === 'admin123') {
+                        document.getElementById('adminLogin').classList.add('hidden');
+                        document.getElementById('adminDashboard').classList.remove('hidden');
+                        alert('Admin login successful!');
+                    } else {
+                        alert('Invalid credentials');
+                    }
+                });
             }
             
-            var orderData = {
-                items: cart,
-                total: parseFloat(document.getElementById('cartTotal').textContent),
-                timestamp: new Date().toISOString()
-            };
-            
-            showToast('Processing order via AJAX...');
-            
-            setTimeout(function() {
-                console.log('Order submitted via AJAX:', orderData);
-                showToast('Order placed successfully! Order ID: #' + Math.floor(Math.random() * 10000));
-                
-                cart = [];
-                updateCartDisplay();
-                toggleCart();
-            }, 2000);
-        }
-
-        function submitProfileForm(event) {
-            if (event) event.preventDefault();
-            
-            var formData = {
-                name: document.querySelector('input[type="text"]').value,
-                email: document.querySelector('input[type="email"]').value
-            };
-            
-            showToast('Updating profile via AJAX...');
-            
-            setTimeout(function() {
-                console.log('Profile updated via AJAX:', formData);
-                showToast('Profile updated successfully!');
-            }, 1500);
-            
-            return false;
-        }
-
-        // Initialize AJAX functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('AJAX functionality initialized for Task 5');
-            
-            var profileForm = document.querySelector('#profileSection form');
+            var profileForm = document.getElementById('profileForm');
             if (profileForm) {
-                profileForm.addEventListener('submit', submitProfileForm);
+                profileForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Profile updated successfully!');
+                });
             }
         });
     </script>
